@@ -1,0 +1,57 @@
+kind: workload
+metadata:
+  name: sf-2
+  namespace: default
+apiVersion: cpln.io/v1
+cpln:
+  kind: workload
+  name: sf-2
+  gvc: aws
+  description: sf-2
+  tags: {}
+  spec:
+    type: stateful
+    containers:
+      - name: agent
+        cpu: 50m
+        image: kylecupp/agent:0.9.3
+        inheritEnv: false
+        memory: 128Mi
+        ports:
+          - number: 8080
+            protocol: http
+        volumes:
+          - path: /vs
+            recoveryPolicy: retain
+            uri: cpln://volumeset/vs-2
+    defaultOptions:
+      autoscaling:
+        maxConcurrency: 0
+        maxScale: 3
+        metric: rps
+        minScale: 1
+        scaleToZeroDelay: 300
+        target: 1
+      capacityAI: false
+      debug: false
+      suspend: false
+      timeoutSeconds: 5
+    firewallConfig:
+      external:
+        inboundAllowCIDR:
+          - 0.0.0.0/0
+        inboundBlockedCIDR: []
+        outboundAllowCIDR:
+          - 0.0.0.0/0
+        outboundAllowHostname: []
+        outboundAllowPort: []
+        outboundBlockedCIDR: []
+      internal:
+        inboundAllowType: none
+        inboundAllowWorkload: []
+    loadBalancer:
+      direct:
+        enabled: false
+        ports: []
+    supportDynamicTags: false
+
