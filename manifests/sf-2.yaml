@@ -13,7 +13,7 @@ cpln:
     type: stateful
     containers:
       - name: agent
-        cpu: 50m
+        cpu: 25m
         image: kylecupp/agent:0.9.3
         inheritEnv: false
         memory: 128Mi
