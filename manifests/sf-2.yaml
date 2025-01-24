@@ -3,7 +3,7 @@ metadata:
   name: sf-2
   namespace: default
 apiVersion: cpln.io/v1
-cpln:
+spec:
   kind: workload
   name: sf-2
   gvc: aws
