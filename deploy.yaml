@@ -1,0 +1,108 @@
+---
+# 1. Create the argocd Namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: argocd
+---
+# 2. Define a ServiceAccount for Argo CD with Cluster-Wide Permissions
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: argocd-service-account
+  namespace: argocd
+---
+# 3. Create a ClusterRole with Permissions to All Resources
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: argocd-cluster-role
+rules:
+  - apiGroups: ["*"]       # Grants access to all API groups
+    resources: ["*"]       # Grants access to all resources
+    verbs: ["*"]            # Grants all verbs (get, list, watch, create, update, patch, delete)
+---
+# 4. Bind the ClusterRole to the Argo CD ServiceAccount
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: argocd-cluster-role-binding
+subjects:
+  - kind: ServiceAccount
+    name: argocd-service-account
+    namespace: argocd
+roleRef:
+  kind: ClusterRole
+  name: argocd-cluster-role
+  apiGroup: rbac.authorization.k8s.io
+---
+# 5. Deploy the Argo CD Server
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-server
+  namespace: argocd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: argocd-server
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: argocd-server
+    spec:
+      serviceAccountName: argocd-service-account
+      containers:
+        - name: argocd-server
+          image: argoproj/argocd:v2.7.0 # Replace with the desired Argo CD version
+          ports:
+            - containerPort: 8080
+              name: server
+          args:
+            - argocd-server
+          env:
+            - name: ARGOCD_REDIS_HOST
+              value: "argocd-redis"
+            - name: ARGOCD_REDIS_PORT
+              value: "6379"
+          # Additional environment variables can be added here as needed
+---
+# 6. Expose the Argo CD Server via a LoadBalancer Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: argocd-server
+  namespace: argocd
+spec:
+  type: LoadBalancer # Use NodePort if LoadBalancer is not available
+  ports:
+    - port: 443
+      targetPort: 8080
+      protocol: TCP
+      name: https
+  selector:
+    app.kubernetes.io/name: argocd-server
+---
+# 7. Create an Argo CD Application to Sync Manifests from Your Git Repository
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: example-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/Cuppojoe/argo-example.git'
+    targetRevision: HEAD
+    path: manifests
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    # Optional: Specify sync options
+    # syncOptions:
+    #   - CreateNamespace=true
