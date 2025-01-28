@@ -1,25 +1,21 @@
 kind: workload
 metadata:
-  name: sf-2.aws
+  name: serverless.aws
   namespace: default
 apiVersion: cpln.io/v1
-description: sf-2
+description: serverless
 tags: {}
 spec:
-  type: stateful
+  type: serverless
   containers:
     - name: agent
-      cpu: 1m
+      cpu: 51m
       image: kylecupp/agent:0.9.3
       inheritEnv: false
       memory: 128Mi
       ports:
         - number: 8080
           protocol: http
-      volumes:
-        - path: /vs
-          recoveryPolicy: retain
-          uri: cpln://volumeset/vs-2
   defaultOptions:
     autoscaling:
       maxConcurrency: 0
