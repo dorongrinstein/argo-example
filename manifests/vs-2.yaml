@@ -3,7 +3,7 @@ metadata:
   name: sf-2.aws
   namespace: default
 apiVersion: cpln.io/v1
-description: vs-2
+description: vs-2 asdf
 tags: {}
 spec:
   fileSystemType: ext4
