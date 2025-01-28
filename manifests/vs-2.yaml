@@ -1,6 +1,6 @@
 kind: volumeset
 metadata:
-  name: sf-2.aws
+  name: vs-2.aws
   namespace: default
 apiVersion: cpln.io/v1
 description: vs-2 asdf
