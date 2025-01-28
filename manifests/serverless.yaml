@@ -9,7 +9,7 @@ spec:
   type: serverless
   containers:
     - name: agent
-      cpu: 51m
+      cpu: 100m
       image: kylecupp/agent:0.9.3
       inheritEnv: false
       memory: 128Mi
