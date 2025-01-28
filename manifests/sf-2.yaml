@@ -9,7 +9,7 @@ spec:
   type: stateful
   containers:
     - name: agent
-      cpu: 1m
+      cpu: 50m
       image: kylecupp/agent:0.9.3
       inheritEnv: false
       memory: 128Mi
