@@ -1,0 +1,14 @@
+kind: volumeset
+metadata:
+  name: sf-2.aws
+  namespace: default
+apiVersion: cpln.io/v1
+description: vs-2
+tags: {}
+spec:
+  fileSystemType: ext4
+  initialCapacity: 10
+  performanceClass: general-purpose-ssd
+  snapshots:
+    createFinalSnapshot: true
+    retentionDuration: "7d"
