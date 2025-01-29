@@ -3,7 +3,7 @@ metadata:
   name: sf.quiet
   namespace: default
 apiVersion: cpln.io/v1
-description: sf
+description: sf s
 tags: {}
 spec:
   type: stateful
