@@ -1,6 +1,6 @@
 kind: volumeset
 metadata:
-  name: vs-0.quiet
+  name: vs-0
   namespace: default
 apiVersion: cpln.io/v1
 description: vs-0
