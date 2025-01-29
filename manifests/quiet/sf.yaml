@@ -3,7 +3,7 @@ metadata:
   name: sf.quiet
   namespace: default
 apiVersion: cpln.io/v1
-description: sf s
+description: sf
 tags: {}
 spec:
   type: stateful
@@ -19,7 +19,7 @@ spec:
       volumes:
         - path: /vs
           recoveryPolicy: retain
-          uri: cpln://volumeset/vs-2
+          uri: cpln://volumeset/vs-0
   defaultOptions:
     autoscaling:
       maxConcurrency: 0
