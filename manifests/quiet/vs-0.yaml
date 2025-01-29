@@ -3,7 +3,7 @@ metadata:
   name: vs-0
   namespace: default
 apiVersion: cpln.io/v1
-description: vs-0
+description: vs-0 asdf
 org: kyle-test-org-2
 gvc: quiet
 tags: {}
