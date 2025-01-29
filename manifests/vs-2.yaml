@@ -1,9 +1,11 @@
 kind: volumeset
 metadata:
-  name: vs-2.aws
+  name: vs-2
   namespace: default
 apiVersion: cpln.io/v1
 description: vs-2 asdf
+org: kyle-test-org-2
+gvc: aws
 tags: {}
 spec:
   fileSystemType: ext4

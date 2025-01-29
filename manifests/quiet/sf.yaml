@@ -1,10 +1,12 @@
 kind: workload
 metadata:
-  name: sf.quiet
+  name: sf
   namespace: default
 apiVersion: cpln.io/v1
 description: sf
 tags: {}
+org: kyle-test-org-2
+gvc: quiet
 spec:
   type: stateful
   containers:

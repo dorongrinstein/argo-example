@@ -4,6 +4,8 @@ metadata:
   namespace: default
 apiVersion: cpln.io/v1
 description: vs-0
+org: kyle-test-org-2
+gvc: quiet
 tags: {}
 spec:
   fileSystemType: ext4

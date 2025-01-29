@@ -1,10 +1,12 @@
 kind: workload
 metadata:
-  name: serverless.aws
+  name: serverless
   namespace: default
 apiVersion: cpln.io/v1
 description: serverless
 tags: {}
+org: kyle-test-org-2
+gvc: aws
 spec:
   type: serverless
   containers:

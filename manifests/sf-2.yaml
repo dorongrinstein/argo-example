@@ -1,10 +1,12 @@
 kind: workload
 metadata:
-  name: sf-2.aws
+  name: sf-2
   namespace: default
 apiVersion: cpln.io/v1
 description: sf-2
 tags: {}
+org: kyle-test-org-2
+gvc: aws
 spec:
   type: stateful
   containers:
