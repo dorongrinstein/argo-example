@@ -1,0 +1,14 @@
+kind: volumeset
+metadata:
+  name: vs-0.quiet
+  namespace: default
+apiVersion: cpln.io/v1
+description: vs-0
+tags: {}
+spec:
+  fileSystemType: ext4
+  initialCapacity: 10
+  performanceClass: general-purpose-ssd
+  snapshots:
+    createFinalSnapshot: true
+    retentionDuration: "7d"
