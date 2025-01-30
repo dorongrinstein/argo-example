@@ -25,9 +25,9 @@ spec:
   defaultOptions:
     autoscaling:
       maxConcurrency: 0
-      maxScale: 0
+      maxScale: 1
       metric: rps
-      minScale: 0
+      minScale: 1
       scaleToZeroDelay: 300
       target: 1
     capacityAI: false
