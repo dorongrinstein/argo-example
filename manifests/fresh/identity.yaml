@@ -1,6 +1,8 @@
 kind: identity
 apiVersion: cpln.io/v1
-name: identity
+metadata:
+  name: identity
+  namespace: default
 org: kyle-test-org-2
 gvc: fresh
 description: identity

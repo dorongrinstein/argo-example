@@ -1,5 +1,7 @@
 kind: workload
-name: workload
+metadata:
+  namespace: default
+  name: workload
 description: workload
 apiVersion: cpln.io/v1
 org: kyle-test-org-2

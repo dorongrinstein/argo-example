@@ -1,5 +1,7 @@
 kind: gvc
-name: fresh
+metadata:
+  name: fresh
+  namespace: default
 apiVersion: cpln.io/v1
 description: fresh
 org: kyle-test-org-2
