@@ -1,12 +1,12 @@
 kind: gvc
 name: fresh
+apiVersion: cpln.io/v1
 description: fresh
 org: kyle-test-org-2
 tags: {}
 spec:
   loadBalancer:
     dedicated: false
-    trustedProxies: 0
   staticPlacement:
     locationLinks:
       - //location/aws-eu-central-1
