@@ -2,6 +2,8 @@ kind: workload
 metadata:
   name: sf-2
   namespace: default
+  annotations:
+    cpln.io/resource-policy: keep
 apiVersion: cpln.io/v1
 description: sf-2
 tags: {}

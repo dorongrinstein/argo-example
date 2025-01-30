@@ -2,6 +2,8 @@ kind: volumeset
 metadata:
   name: vs-2
   namespace: default
+  annotations:
+    cpln.io/resource-policy: keep
 apiVersion: cpln.io/v1
 description: vs-2 asdf
 org: kyle-test-org-2
