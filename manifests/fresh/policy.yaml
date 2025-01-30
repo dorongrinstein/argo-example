@@ -1,0 +1,13 @@
+kind: policy
+name: policy
+description: policy
+org: kyle-test-org-2
+tags: {}
+bindings:
+  - permissions:
+      - reveal
+    principalLinks:
+      - //gvc/fresh/identity/identity
+targetKind: secret
+targetLinks:
+  - //secret/secret
