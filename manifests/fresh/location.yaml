@@ -1,4 +1,6 @@
 kind: location
+apiVersion: cpln.io/v1
+org: kyle-test-org-2
 metadata:
   name: aws-eu-central-1
   namespace: default

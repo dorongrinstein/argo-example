@@ -1,5 +1,6 @@
 kind: user
 org: kyle-test-org-2
+apiVersion: cpln.io/v1
 metadata:
   name: Kyle Cupp
   namespace: default

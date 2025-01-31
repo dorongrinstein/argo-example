@@ -1,5 +1,6 @@
 kind: ipset
 org: kyle-test-org-2
+apiVersion: cpln.io/v1
 metadata:
   name: ipset
   namespace: default

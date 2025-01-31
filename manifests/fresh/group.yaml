@@ -1,5 +1,6 @@
 kind: group
 org: kyle-test-org-2
+apiVersion: cpln.io/v1
 metadata:
   name: group
   namespace: default
