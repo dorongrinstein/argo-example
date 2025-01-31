@@ -2,7 +2,9 @@ kind: user
 org: kyle-test-org-2
 apiVersion: cpln.io/v1
 metadata:
-  name: Kyle_Cupp
+  name: kyle-cupp
   namespace: default
+  annotations:
+    cpln.io/name-replacement: Kyle Cupp
 email: kylescupp@gmail.com
 idp: firebase
