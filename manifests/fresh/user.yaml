@@ -1,0 +1,7 @@
+kind: user
+org: kyle-test-org-2
+metadata:
+  name: Kyle Cupp
+  namespace: default
+email: kylescupp@gmail.com
+idp: firebase

@@ -1,35 +1,36 @@
 kind: workload
 metadata:
+  name: stateful
   namespace: default
-  name: workload
-description: workload
 apiVersion: cpln.io/v1
-org: kyle-test-org-2
-gvc: fresh
+description: stateful
 tags: {}
+org: kyle-test-org-2
+gvc: quiet
 spec:
-  type: serverless
+  type: stateful
   containers:
     - name: agent
-      cpu: 50m
-      env:
-        - name: SECRET_KEY
-          value: cpln://secret/secret.SECRET_KEY
+      cpu: 51m
       image: kylecupp/agent:0.9.3
       inheritEnv: false
       memory: 128Mi
       ports:
         - number: 8080
           protocol: http
+      volumes:
+        - path: /vs
+          recoveryPolicy: retain
+          uri: cpln://volumeset/vs-0
   defaultOptions:
     autoscaling:
-      maxConcurrency: 1000
+      maxConcurrency: 0
       maxScale: 3
-      metric: concurrency
+      metric: rps
       minScale: 1
       scaleToZeroDelay: 300
-      target: 100
-    capacityAI: true
+      target: 1
+    capacityAI: false
     debug: false
     suspend: false
     timeoutSeconds: 5
@@ -38,23 +39,17 @@ spec:
       inboundAllowCIDR:
         - 0.0.0.0/0
       inboundBlockedCIDR: []
-      outboundAllowCIDR: []
+      outboundAllowCIDR:
+        - 0.0.0.0/0
       outboundAllowHostname: []
       outboundAllowPort: []
       outboundBlockedCIDR: []
     internal:
       inboundAllowType: none
       inboundAllowWorkload: []
-  identityLink: //gvc/fresh/identity/identity
   loadBalancer:
     direct:
-      enabled: true
-      ipSet: "/org/kyle-test-org-2/ipset/ipset"
-      ports: [
-        {
-          externalPort: 443,
-          protocol: "TCP",
-          containerPort: 8080
-        }
-      ]
+      enabled: false
+      ports: []
   supportDynamicTags: false
+

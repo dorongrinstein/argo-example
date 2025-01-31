@@ -1,0 +1,9 @@
+kind: group
+org: kyle-test-org-2
+metadata:
+  name: group
+  namespace: default
+description: group
+tags: {}
+memberLinks:
+  - //user/kylescupp@gmail.com
