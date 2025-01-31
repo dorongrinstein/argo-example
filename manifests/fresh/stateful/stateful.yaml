@@ -6,7 +6,7 @@ apiVersion: cpln.io/v1
 description: stateful
 tags: {}
 org: kyle-test-org-2
-gvc: quiet
+gvc: fresh
 spec:
   type: stateful
   containers:
