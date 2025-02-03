@@ -4,7 +4,7 @@ metadata:
   namespace: default
   name: policy
 description: policy
-org: kyle-test-org-2
+org: kyle-test-org
 tags: {}
 bindings:
   - permissions:

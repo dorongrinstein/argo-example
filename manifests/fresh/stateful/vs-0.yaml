@@ -6,7 +6,7 @@ metadata:
     cpln.io/resource-policy: keep
 apiVersion: cpln.io/v1
 description: vs-0 asdf
-org: kyle-test-org-2
+org: kyle-test-org
 gvc: fresh
 tags: {}
 spec:

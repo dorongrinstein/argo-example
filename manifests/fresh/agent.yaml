@@ -1,5 +1,5 @@
 kind: agent
-org: kyle-test-org-2
+org: kyle-test-org
 metadata:
   name: agent
   namespace: default

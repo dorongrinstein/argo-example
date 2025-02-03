@@ -4,7 +4,7 @@ metadata:
   namespace: default
 apiVersion: cpln.io/v1
 description: fresh
-org: kyle-test-org-2
+org: kyle-test-org
 tags: {}
 spec:
   loadBalancer:

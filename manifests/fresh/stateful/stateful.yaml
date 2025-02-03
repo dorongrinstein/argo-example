@@ -5,7 +5,7 @@ metadata:
 apiVersion: cpln.io/v1
 description: stateful
 tags: {}
-org: kyle-test-org-2
+org: kyle-test-org
 gvc: fresh
 spec:
   type: stateful

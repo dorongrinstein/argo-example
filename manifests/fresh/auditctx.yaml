@@ -1,5 +1,5 @@
 kind: auditctx
-org: kyle-test-org-2
+org: kyle-test-org
 metadata:
   name: load-testing
   namespace: default

@@ -3,7 +3,7 @@ apiVersion: cpln.io/v1
 metadata:
   name: identity
   namespace: default
-org: kyle-test-org-2
+org: kyle-test-org
 gvc: fresh
 description: identity
 tags: {}
