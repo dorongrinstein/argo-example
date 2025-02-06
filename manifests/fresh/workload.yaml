@@ -11,7 +11,7 @@ spec:
   type: serverless
   containers:
     - name: agent
-      cpu: 50m
+      cpu: 5m
       env:
         - name: SECRET_KEY
           value: cpln://secret/secret.payload
