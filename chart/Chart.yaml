@@ -9,7 +9,7 @@ maintainers:
     email: kyle@controlplane.com
 
 sources:
-  - https://github.com/Cuppojoe/argo-example
+  - https://github.com/dorongrinstein/argo-example
 
 keywords:
   - go

@@ -1,8 +1,0 @@
-kind: auditctx
-org: kyle-test-org
-metadata:
-  name: load-testing
-  namespace: default
-apiVersion: cpln.io/v1
-description: load-testing
-tags: {}
