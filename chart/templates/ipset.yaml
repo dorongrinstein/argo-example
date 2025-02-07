@@ -1,0 +1,13 @@
+kind: ipset
+org: {{ .Values.org }}
+apiVersion: cpln.io/v1
+metadata:
+  name: ipset
+  namespace: default
+description: ipset
+tags: {}
+spec:
+  link: //gvc/fresh/workload/workload
+  locations:
+    - name: //location/aws-eu-central-1
+      retentionPolicy: keep

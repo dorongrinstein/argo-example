@@ -1,0 +1,14 @@
+kind: gvc
+metadata:
+  name: fresh
+  namespace: default
+apiVersion: cpln.io/v1
+description: fresh
+org: {{ .Values.org }}
+tags: {}
+spec:
+  loadBalancer:
+    dedicated: false
+  staticPlacement:
+    locationLinks:
+      - //location/aws-eu-central-1

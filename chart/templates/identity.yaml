@@ -1,0 +1,9 @@
+kind: identity
+apiVersion: cpln.io/v1
+metadata:
+  name: identity
+  namespace: default
+org: {{ .Values.org }}
+gvc: fresh
+description: identity
+tags: {}

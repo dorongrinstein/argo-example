@@ -1,0 +1,8 @@
+kind: auditctx
+org: {{ .Values.org }}
+metadata:
+  name: load-testing
+  namespace: default
+apiVersion: cpln.io/v1
+description: load-testing
+tags: {}

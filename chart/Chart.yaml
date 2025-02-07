@@ -1,0 +1,22 @@
+apiVersion: v2
+name: argo-example
+description: An example of a helm chart for managing cpln resources with the Control Plane k8s operator.
+type: application
+version: 0.2.1
+
+maintainers:
+  - name: Kyle Cupp
+    email: kyle@controlplane.com
+
+sources:
+  - https://github.com/Cuppojoe/argo-example
+
+keywords:
+  - go
+  - Control Plane
+  - helm
+
+dependencies: [ ]
+
+annotations:
+  category: Helm Chart

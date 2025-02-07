@@ -1,0 +1,8 @@
+kind: agent
+org: {{ .Values.org }}
+metadata:
+  name: agent
+  namespace: default
+apiVersion: cpln.io/v1
+description: tagent
+tags: {}
